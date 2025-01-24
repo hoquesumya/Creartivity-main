@@ -2,12 +2,12 @@ import React from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import "../../styles/main_section.css"
+import "../../styles/frontPage/main_section.css"
 
-function Main_sections(){
+function Main_sections({isLogin, funtionToggle}){
     return (
         <>
-        <Container fluid className="main_intro" style={{height:"100vh"}}>
+        <Container fluid className={isLogin ? "main_intro_login" : "main_intro"} style={{height:"100vh"}}>
             <Row style={{height:"100vh", backgroundColor:"pink"}}>
                 <Col>
                 Hello

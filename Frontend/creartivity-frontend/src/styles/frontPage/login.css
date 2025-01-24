@@ -1,0 +1,27 @@
+.main-login{
+ position: fixed;
+  align-self: center;
+  height:80vh;
+  width: 470px;
+  background-color: aliceblue;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 2px 10px;
+  border-radius: 5%;
+  z-index: 10008;
+}
+.login{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+ 
+}
+.login #or{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+    line-height: 0%;
+}
+.terms-condition{
+    text-align: center;
+    font-size: small;
+    margin-top: 5%;
+}

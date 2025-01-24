@@ -1,0 +1,9 @@
+.main_intro{
+    margin-top: 5.5%;
+}
+.main_into_login{
+    margin-top: 5.5%;
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+}
