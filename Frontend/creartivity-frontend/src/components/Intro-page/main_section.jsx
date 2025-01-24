@@ -4,10 +4,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import "../../styles/frontPage/main_section.css"
 
-function Main_sections({isLogin, funtionToggle}){
+function Main_sections({isLogin, isSignUp}){
     return (
         <>
-        <Container fluid className={isLogin ? "main_intro_login" : "main_intro"} style={{height:"100vh"}}>
+        <Container fluid className={isLogin || isSignUp? "main_intro_login" : "main_intro"} style={{height:"100vh"}}>
             <Row style={{height:"100vh", backgroundColor:"pink"}}>
                 <Col>
                 Hello

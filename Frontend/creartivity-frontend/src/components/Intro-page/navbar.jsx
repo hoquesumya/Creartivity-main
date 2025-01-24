@@ -9,7 +9,7 @@ function NavbarCreartivity({isLogin, funtionToggle,  isSignUp, funtionToggleSign
 
     return(
         
-        <Navbar expand="xl" className={isLogin ? "navbar-logged-in" : "navbar-custom"} fixed="top">
+        <Navbar expand="xl" className={isLogin || isSignUp ? "navbar-logged-in" : "navbar-custom"} fixed="top">
            <Container fluid>
            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
            <Navbar.Collapse id="responsive-navbar-nav">

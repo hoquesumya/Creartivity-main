@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import "../../styles/frontPage/signup.css"
 import { Button } from "react-bootstrap";
 import ClearIcon from '@mui/icons-material/Clear';
-function SignupDiv({funtionToggle}){
+function SignupDiv({funtionToggleSignup}){
     return(
       <>
       <div className="main-signup">
@@ -15,7 +15,10 @@ function SignupDiv({funtionToggle}){
              alignItems:"end"
         }}
         >
-            <Button onClick={funtionToggle}>
+            <Button onClick={() => {
+        console.log("Button clicked!");
+        funtionToggleSignup(); // Ensure this is being called
+      }}>
                <ClearIcon></ClearIcon>
             </Button>
 
@@ -47,7 +50,6 @@ function SignupDiv({funtionToggle}){
                 </Form.Label>
                 <Form.Control type="password" placeholder="Password" />
             </Form.Group>
-            <p>Forgot Password?</p>
             <Button variant="primary" size="lg"  style={{width:"60%"}}>
                 Continue
             </Button>

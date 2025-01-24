@@ -10,15 +10,30 @@ function IntroPage(){
     const [isLogin, setLogin] = useState(false);
     const [isSignUp, setSignUp] = useState(false);
     const toggleLogin = () => setLogin((prev) => !prev);
-    const toggleSignUp = () => setSignUp((prev) => !prev);
-    return(
+    const toggleSignUp = () => {
+        setSignUp((prev) => {
+          console.log("Previous Value:", prev); // Logs the previous value
+          return !prev; // Updates the state
+        });
+      };
+      return (
         <div className="Intro">
-            <NavbarCreartivity isLogin={isLogin} funtionToggle ={toggleLogin} isSignUp={isSignUp}funtionToggleSignup={toggleSignUp} ></NavbarCreartivity>
-            {isLogin && <LoginDiv funtionToggle={toggleLogin}/>}
-            {isSignUp && <SignupDiv functionToggle={toggleSignUp}/>}
-            <Main_sections isLogin={isLogin} funtionToggle ={toggleLogin}></Main_sections> 
-       </div>
-        
-    )
-}
+          <NavbarCreartivity
+            isLogin={isLogin}
+            funtionToggle={toggleLogin}
+            isSignUp={isSignUp}
+            funtionToggleSignup={toggleSignUp} // Fixed prop name
+          />
+          {isLogin && <LoginDiv funtionToggle={toggleLogin} />}
+          {isSignUp && <SignupDiv funtionToggleSignup={toggleSignUp} />} {/* Fixed */}
+          <Main_sections 
+          isLogin={isLogin} 
+          funtionToggle={toggleLogin} 
+          isSignUp={isSignUp}
+          funtionToggleSignup={toggleSignUp}
+          />
+        </div>
+      );
+    }
+
 export default IntroPage
