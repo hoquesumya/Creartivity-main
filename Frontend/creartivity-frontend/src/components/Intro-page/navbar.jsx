@@ -18,10 +18,10 @@ function NavbarCreartivity({isLogin, funtionToggle,  isSignUp, funtionToggleSign
                     <Nav.Link href="#home">About</Nav.Link>
             </Nav>
             <Nav>
-                <Button variant="primary" size="sm" active className="ms-auto" onClick={funtionToggle}>
+                <Button variant="primary" size="xsm" active onClick={funtionToggle}>
                 Login
                 </Button>
-                <Button variant="secondary" size="sm" active style={{marginLeft:"10px"}} onClick={funtionToggleSignup}>
+                <Button variant="secondary" size="xsm" active style={{marginLeft:"10px"}} onClick={funtionToggleSignup}>
                 Sign Up
                 </Button>
             </Nav>
