@@ -20,11 +20,6 @@ function Main_sections({isLogin, isSignUp}){
 
     const elements = ["Create", "Showcase", "Inspire"];
     const [currentElement, setCurrentElement] = useState(0);
-    const [isHover, setIsHover] = useState(false)
-    const [isHover2, setIsHover2] = useState(false)
-    const [isHover4, setIsHover4] = useState(false)
-    const [isHover5, setIsHover5] = useState(false)
-    const [isHover6, setIsHover6] = useState(false)
   
 
     const [hoverState, setHoverState] = useState({});
