@@ -7,3 +7,26 @@
     pointer-events: none;
     cursor: not-allowed;
 }
+img:hover{
+    transform: scale(1.1);
+}
+
+
+  @keyframes slideInFromBottom {
+    0% {
+      transform: translateY(100%); /* Start below the container */
+      opacity: 0;
+    }
+    30% {
+      transform: translateY(0); /* Slide to original position */
+      opacity: 1;
+    }
+    70% {
+      transform: translateY(0); /* Stay still for some time */
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100%); /* Slide up out of view */
+      opacity: 0;
+    }
+  }

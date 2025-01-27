@@ -1,10 +1,10 @@
 .navbar-custom{
-    background-color: #ffebcdd4 !important;   
+    background-color: #ECE9E7 !important;   
     height: 80px;
 
 }
 .navbar-logged-in{
-    background-color: #ffebcdd4 !important;   
+    background-color: #ECE9E7 !important;   
     opacity: 0.5;
     height: 80px;
     pointer-events: none;
