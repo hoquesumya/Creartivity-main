@@ -10,7 +10,43 @@
 img:hover{
     transform: scale(1.1);
 }
-
+.image-div-0{
+    width:50%;
+}
+.image-div-1{
+    width:50%;
+    height:100%;
+    left:40%;
+    top:10%;
+    position:absolute;
+}
+.image-div-2{
+    width:50%;
+    position:absolute;
+    right:65%;
+    height: 100%
+}
+.image-div-3{
+    width:50%;
+    height:100%;
+    left:30%;
+    top:15%;
+    position:absolute;   
+}
+.image-div-4{
+    width:50%;
+    right:75%;
+    position:absolute;
+    height: 100%
+}
+.image-div-5{
+    width:50%;
+    height:100%;
+    left:25%;
+    top:10%;
+    position:absolute;
+                           
+}
 
   @keyframes slideInFromBottom {
     0% {

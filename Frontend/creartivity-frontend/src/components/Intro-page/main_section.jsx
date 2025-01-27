@@ -14,6 +14,8 @@ import art6 from "/assets/art6.jpg"
 
 function Main_sections({isLogin, isSignUp}){
     const colors = ["#930b9f","#80230A", "#023623"]
+    const arts = [art1, art2, art3, art4, art5, art6]
+    const hover=[0, 3, 9, 3, 9, 4]
 
 
     const elements = ["Create", "Showcase", "Inspire"];
@@ -24,8 +26,16 @@ function Main_sections({isLogin, isSignUp}){
     const [isHover5, setIsHover5] = useState(false)
     const [isHover6, setIsHover6] = useState(false)
   
-  
-    // Update current element every 3 seconds (you can adjust this as per requirement)
+
+    const [hoverState, setHoverState] = useState({});
+
+    const handleHover = (index, isHovering) => {
+            setHoverState((prevState) => ({
+            ...prevState,
+            [index]: isHovering, // Update hover state for the specific index
+            }));
+        };
+        
     useEffect(() => {
       const interval = setInterval(() => {
         setCurrentElement((prev) => (prev + 1) % elements.length);
@@ -72,118 +82,36 @@ function Main_sections({isLogin, isSignUp}){
                 }} 
                     className="gx-4"
                     >
-                        <Col 
-                        style=
-                        {{
-                            position: "relative",
-                            display:"flex",
-                            flexDirection:"row"
-                        }}>
-                            <div style={{
-                                "width":"50%",
-                                zIndex:isHover?100:0
-                        }} 
-                        onMouseEnter={() => setIsHover(true)}
-                        onMouseLeave={() => setIsHover(false)} 
-                      
-                        >
-                                <img src={art1} style={{width:"100%", height:"100%"}}></img>
-
-                            </div>
-                            <div style={{
-                                "width":"50%",
-                                "height":"100%",
-                                "left":"40%",
-                                "top":"10%",
-                                "zIndex": isHover2?100:"3",
-                                "position":"absolute",
-                                backgroundColor:"lightcoral",
-                              
-                            }}
-                            onMouseEnter={() => setIsHover2(true)}
-                            onMouseLeave={() => setIsHover2(false)} 
-                            >
-                            <img src={art2} style={{width:"100%", height:"100%"}}></img>
-
-                            </div>
-                        </Col>
-
-                        <Col  style={{
-                            position: "relative",
-                            display:"flex",
-                            flexDirection:"row"}}>
-                    
-                            <div 
-                            
+                    {
+                        [0, 1, 2].map((colIndex) => (
+                            <Col
+                            key={colIndex}
                             style={{
-                                "width":"50%",
-                                backgroundColor:"lightsalmon",
-                                "position":"absolute",
-                                "zIndex":"9",
-                                "right":"65%",
-                                height: "100%",
-                               
+                                position: "relative",
+                                display: "flex",
+                                flexDirection: "row",
                             }}
-                            
                             >
-                                <img src={art3} style={{width:"100%", height:"100%"}}></img>
-
-                            </div>
-                            <div
-                             style={{"width":"50%",
-                             "height":"100%",
-                             "left":"30%",
-                             "top":"15%",
-                             "zIndex":isHover4?100:"3",
-                             "position":"absolute",
-                             backgroundColor:"lightcoral"
-                             }}
-                             onMouseEnter={() => setIsHover4(true)}
-                             onMouseLeave={() => setIsHover4(false)} 
-                            >
-                                <img src={art4} style={{width:"100%", height:"100%"}}></img>
-                                
-                            </div>
-                        </Col>
-
-                        <Col  style={{
-                            position: "relative",
-                            display:"flex",
-                            flexDirection:"row"}}>
-                    
-                            <div 
-                            
-                            style={{
-                                "width":"50%",
-                                backgroundColor:"lightsalmon",
-                                "zIndex": isHover5?100:"9",
-                                right:"75%",
-                                position:"absolute",
-                                height: "100%",
-
-
-                            }}
-                            onMouseEnter={() => setIsHover5(true)}
-                             onMouseLeave={() => setIsHover5(false)} 
-                            >
-                                <img src={art5} style={{width:"100%", height:"100%"}}></img>
-
-                            </div>
-                            <div
-                             style={{"width":"50%",
-                             "height":"100%",
-                             "left":"25%",
-                             "top":"10%",
-                             "zIndex":isHover6?100:"4",
-                             "position":"absolute",
-                             backgroundColor:"lightcoral"
-                             }}
-                             onMouseEnter={() => setIsHover6(true)}
-                             onMouseLeave={() => setIsHover6(false)} 
-                            >
-                                 <img src={art6} style={{width:"100%", height:"100%"}}></img>
-                            </div>
-                        </Col>
+                            {
+                                arts
+                                .slice(colIndex * 2, colIndex * 2 + 2) // Take 2 images per column
+                                .map((art, artIndex) => (
+                                    <div
+                                    key={colIndex * 2 + artIndex} // Ensure unique key across all columns and images
+                                    className={`image-div-${colIndex * 2 + artIndex}`}
+                                    style={{
+                                        zIndex: hoverState[colIndex * 2 + artIndex] ? 100 : hover[colIndex * 2 + artIndex], // Adjust z-index based on hover state
+                                    }}
+                                    onMouseEnter={() => handleHover(colIndex * 2 + artIndex, true)} // Set hover to true for the current image
+                                    onMouseLeave={() => handleHover(colIndex * 2 + artIndex, false)} // Set hover to false when mouse leaves
+                                    >
+                                    <img src={art} style={{ width: "100%", height: "100%" }} alt={`art-${colIndex * 2 + artIndex}`} />
+                                    </div>
+                                ))
+                            }
+                            </Col>
+                        ))
+                    }
 
 
                     </Row>
