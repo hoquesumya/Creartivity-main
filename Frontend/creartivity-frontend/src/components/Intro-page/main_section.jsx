@@ -11,6 +11,14 @@ import art3 from "/assets/art3.jpg"
 import art4 from "/assets/art4.jpg"
 import art5 from "/assets/art5.jpg"
 import art6 from "/assets/art6.jpg"
+import mid_art2 from "/assets/mid_art2.jpg"
+import mid_art1 from "/assets/pottery.avif"
+import mid_art3 from "/assets/mid_art3.jpg"
+import third_art1 from "/assets/mid_sec3.jpg"
+import third_art2 from "/assets/mid_sec_3_2.jpg"
+import shopping_cart from "/assets/shopping_cart.png"
+import third_art3 from "/assets/mid_sec_3.3.jpg"
+import { Button } from "@mui/material";
 
 function Main_sections({isLogin, isSignUp}){
     const colors = ["#930b9f","#80230A", "#023623"]
@@ -114,15 +122,118 @@ function Main_sections({isLogin, isSignUp}){
                 </Row>
 
             </Row>
-            <Row  style={{height:"100vh",backgroundColor:"#d8ebc6"}}>
-                <Col>
-                Hello
+            <Row  style={{height:"100vh",backgroundColor:"#D4AD73"}}>
+                <Col className="mid-main" style={{
+                
+                     display:"flex",
+                     "justifyContent":"center",
+                     "alignItems":"center",
+                     height:"30%",
+                     position:"relative",
+                     "marginTop":"19%"
+                }}>
+                 <div  className="mid-main1">
+                        <img src={mid_art1} style={{"width":"100%"}}></img>
+                    </div>
+                    <div className="mid-main2"
+                    
+                    >
+                    <Button
+                    style={{backgroundColor:"whitesmoke",
+                    borderRadius:"30px",
+                    color:"black",
+                    width:"50%",
+                    padding:"5%",
+                    "left":"20%",
+                    boxShadow:"5px 10px 15px rgba(139, 69, 19, 0.5)"
+                
+                    }}
+                    >
+                        Upload
+                    </Button>
+
+                    </div>
+                    <div
+                    style={{
+                    "position":"absolute",
+                    "height":"100%",
+                    "zIndex":"30",
+                    "width":"29%",
+                    "bottom":"10%"
+                
+                    }}
+                    >
+                    
+                    <img src={mid_art2} style={{"width":"100%"}}></img>
+                    </div>
+                    <div className="mid-main3"
+                    >
+                    <img src={mid_art3} style={{"width":"100%"}}></img>
+
+                    </div>
+                
+                </Col>
+               
+                <Col className="mid-main4"
+                >
+                <div style={{textAlign:"center", "color":"#ECE9E7","textShadow":"2px 2px 4px #D4AD73"}}>
+                <h1>Exhibit Your Talent</h1>
+                </div>
+                <div
+                style={{"width":"30%", textAlign:"center", padding:"5px"}}
+                >
+                <h5>Upload your work to your gallery and let the world see your talent</h5>
+                </div>
                 </Col>
 
             </Row>
-            <Row  style={{height:"100vh", backgroundColor:"#e6dad3"}}>
-                <Col>
-                Hello
+            <Row  style={{height:"100vh", "backgroundColor":"#D9BFA0"}}>
+                <Col className="third-main"
+                style={{
+                display:"flex",
+                "justifyContent":"center",
+                "alignItems":"center",
+                position:"relative",
+                marginTop:"20%"
+                }}
+                >
+                <div id="third-main1"
+                >
+                    <img src={third_art1} style={{"width":"100%"}}>
+                </img>
+
+
+                </div>
+                <div id="third-main2">
+                <img src={third_art2} style={{"width":"100%"}}>
+                </img>
+
+                </div>
+                <div id="third-main3">
+                <img src={shopping_cart} style={{"width":"100%"}}>
+                </img>
+                </div>
+                <div id="third-main4">
+                <img src={third_art3} style={{"width":"100%"}}></img>
+                </div>
+
+                </Col>
+                <Col style={{backgroundColor:"#F3CCC4",
+                display:"flex",
+                "flexDirection":"column",
+                "justifyContent":"center",
+                "alignItems":"center"
+                
+            }}
+                
+                >
+
+                <div style={{"textAlign":"center", "color": "black", "textShadow":"1px 1px 1px black"}}>
+                    <h1>SELL ART, CONNECT WITH WORLD</h1>
+                </div>
+                <div style={{"textAlign":"center", paddingLeft:"50px", paddingRight:"50px"}}>
+                Unleash your creativity and let your art transcend boundaries. Sell your artwork to a global audience, connect with art enthusiasts around the world, and make your passion a part of someone’s story
+                </div>
                 </Col>
 
             </Row>

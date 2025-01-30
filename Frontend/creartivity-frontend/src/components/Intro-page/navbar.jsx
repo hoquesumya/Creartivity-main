@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Button } from "react-bootstrap";
 import "../../styles/frontPage/navbar.css"
+import { BorderColor } from "@mui/icons-material";
 
 function NavbarCreartivity({isLogin, funtionToggle,  isSignUp, funtionToggleSignup}){
 
@@ -18,10 +19,17 @@ function NavbarCreartivity({isLogin, funtionToggle,  isSignUp, funtionToggleSign
                     <Nav.Link href="#home">About</Nav.Link>
             </Nav>
             <Nav>
-                <Button variant="primary" size="xsm" active onClick={funtionToggle}>
+                <Button variant="primary" size="xsm" active 
+                onClick={funtionToggle}
+                style={{backgroundColor:"#80230A",
+                 boxShadow:" 0 4px 12px rgba(0, 0, 0, 0.3)",
+                 BorderColor:"white"}}
+                >
                 Login
                 </Button>
-                <Button variant="secondary" size="xsm" active style={{marginLeft:"10px"}} onClick={funtionToggleSignup}>
+                <Button variant="secondary" size="xsm" active style={{marginLeft:"10px", 
+               }} 
+                onClick={funtionToggleSignup}>
                 Sign Up
                 </Button>
             </Nav>
