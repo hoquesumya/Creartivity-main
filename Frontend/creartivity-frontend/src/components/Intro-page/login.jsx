@@ -1,9 +1,41 @@
-import React from "react";
+import {React, useState} from "react";
 import Form from 'react-bootstrap/Form';
 import "../../styles/frontPage/login.css"
 import { Button } from "react-bootstrap";
 import ClearIcon from '@mui/icons-material/Clear';
 function LoginDiv({funtionToggle}){
+    const [email, setEmail] = useState("name@example.com")
+    const [passWord, setPassWord] = useState("")
+    function isEmailValid(validate_email){
+        var res = true
+        if (validate_email === "name@example.com"){
+            return false
+        }
+        else{
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/
+            res = emailRegex.test(validate_email)
+        }
+        return res
+    }
+    const handleEmail = (event)=>{
+       setEmail(event.target.value)
+       console.log(email)
+    }
+    const handlePassword = (event) =>{
+        setPassWord(event.target.value)
+        console.log(passWord)
+    }
+    const handleSubmit = (event)=>{
+        event.preventDefault()
+
+        console.log(email, passWord)
+        if (isEmailValid(email) && passWord.length > 6){
+            alert("login is successful")
+        }else{
+            alert("login is failed")
+        }
+    }
+
     return(
       <>
       <div className="main-login">
@@ -38,23 +70,25 @@ function LoginDiv({funtionToggle}){
          }}>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1" style={{width:"60%"}}>
             <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="name@example.com" />
+            <Form.Control type="email" placeholder="name@example.com" onChange={handleEmail}/>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formPlaintextPassword"  style={{width:"60%"}}>
                 <Form.Label>
                 Password
                 </Form.Label>
-                <Form.Control type="password" placeholder="Password" />
+                <Form.Control type="password" placeholder="Password"  onChange={handlePassword}/>
             </Form.Group>
             <p>Forgot Password?</p>
-            <Button variant="primary" size="lg"  style={{width:"60%"}}>
+            <Button variant="primary" size="lg"  style={{width:"60%"}} onClick={handleSubmit}>
                 Log in
             </Button>
          </Form>
          <p id = "or"> OR </p>
         
-         <Button variant="secondary" size="md"  style={{width:"60%", alignSelf:"center"}}>
+         <Button variant="secondary" size="md"  
+         style={{width:"60%", alignSelf:"center"}}
+         >
                 Google
         </Button>
          </div>
