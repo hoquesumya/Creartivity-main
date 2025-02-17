@@ -1,9 +1,40 @@
-import React from "react";
+import {React, useRef} from "react";
 import Form from 'react-bootstrap/Form';
 import "../../styles/frontPage/signup.css"
 import { Button } from "react-bootstrap";
 import ClearIcon from '@mui/icons-material/Clear';
-function SignupDiv({funtionToggleSignup}){
+import { Link } from "react-router";
+
+function SignupDiv({funtionToggleSignup, functionToggleLogin}){
+    const emailRef = useRef(null)
+    const passWordRef = useRef(null)
+
+    function isEmailValid(validate_email){
+        var res = true
+        if (validate_email === "name@example.com"){
+            return false
+        }
+        else{
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/
+            res = emailRegex.test(validate_email)
+        }
+        return res
+    }
+    const handleSubmit = (event)=>{
+        event.preventDefault()
+       emailRef.current.focus() //foucs on the dom element that ref is referencing. will appear after refresh
+
+        const email = emailRef.current.value;
+        const passWord = passWordRef.current.value;
+        console.log(email, passWord)
+        if (isEmailValid(email) && passWord.length > 6){
+            alert("signup is successful")
+        }else{
+            alert("signup is failed")
+        }
+    }
+
+
     return(
       <>
       <div className="main-signup">
@@ -41,16 +72,16 @@ function SignupDiv({funtionToggleSignup}){
          }}>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1" style={{width:"60%"}}>
             <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="name@example.com" />
+            <Form.Control ref = {emailRef} type="email" placeholder="name@example.com" />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formPlaintextPassword"  style={{width:"60%"}}>
                 <Form.Label>
                 Password
                 </Form.Label>
-                <Form.Control type="password" placeholder="Password" />
+                <Form.Control type="password" placeholder="Password" ref = {passWordRef} />
             </Form.Group>
-            <Button variant="primary" size="lg"  style={{width:"60%"}}>
+            <Button variant="primary" size="lg"  style={{width:"60%"}} onClick={handleSubmit}>
                 Continue
             </Button>
          </Form>
@@ -81,7 +112,11 @@ function SignupDiv({funtionToggleSignup}){
                 fontSize:"small"
             }
         }>
-            <p> Already in Creartivity Yet? Login</p>
+            <p> Already in Creartivity Yet? <span style={{cursor: "pointer"}}onClick={() => {
+        console.log("Button clicked!");
+        functionToggleLogin()
+        funtionToggleSignup()
+        }}>Login</span></p>
         </div>
 
 

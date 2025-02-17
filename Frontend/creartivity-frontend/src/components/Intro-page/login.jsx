@@ -1,11 +1,13 @@
-import {React, useState} from "react";
+import {React, useState, useRef} from "react";
 import Form from 'react-bootstrap/Form';
 import "../../styles/frontPage/login.css"
 import { Button } from "react-bootstrap";
 import ClearIcon from '@mui/icons-material/Clear';
-function LoginDiv({funtionToggle}){
-    const [email, setEmail] = useState("name@example.com")
-    const [passWord, setPassWord] = useState("")
+function LoginDiv({funtionToggle, functionToggleSignup}){
+    //const [email, setEmail] = useState("name@example.com")
+    //const [passWord, setPassWord] = useState("")
+    const emailRef = useRef(null)
+    const passWordRef = useRef(null)
     function isEmailValid(validate_email){
         var res = true
         if (validate_email === "name@example.com"){
@@ -17,17 +19,13 @@ function LoginDiv({funtionToggle}){
         }
         return res
     }
-    const handleEmail = (event)=>{
-       setEmail(event.target.value)
-       console.log(email)
-    }
-    const handlePassword = (event) =>{
-        setPassWord(event.target.value)
-        console.log(passWord)
-    }
+ 
     const handleSubmit = (event)=>{
         event.preventDefault()
+       emailRef.current.focus() //foucs on the dom element that ref is referencing. will appear after refresh
 
+        const email = emailRef.current.value;
+        const passWord = passWordRef.current.value;
         console.log(email, passWord)
         if (isEmailValid(email) && passWord.length > 6){
             alert("login is successful")
@@ -70,14 +68,14 @@ function LoginDiv({funtionToggle}){
          }}>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1" style={{width:"60%"}}>
             <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="name@example.com" onChange={handleEmail}/>
+            <Form.Control ref = {emailRef} type="email" placeholder="name@example.com"/>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formPlaintextPassword"  style={{width:"60%"}}>
                 <Form.Label>
                 Password
                 </Form.Label>
-                <Form.Control type="password" placeholder="Password"  onChange={handlePassword}/>
+                <Form.Control ref = {passWordRef} type="password" placeholder="Password" />
             </Form.Group>
             <p>Forgot Password?</p>
             <Button variant="primary" size="lg"  style={{width:"60%"}} onClick={handleSubmit}>
@@ -113,7 +111,7 @@ function LoginDiv({funtionToggle}){
                 fontSize:"small"
             }
         }>
-            <p> Not in Creartivity Yet? Sign Up</p>
+            <p> Not in Creartivity Yet? <span style={{cursor:"pointer"}}onClick={()=>{functionToggleSignup();funtionToggle()}}>Sign Up</span></p>
         </div>
 
 
