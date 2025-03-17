@@ -1,0 +1,136 @@
+.main_intro{
+    margin-top: 5.5%;
+}
+.main_into_login{
+    margin-top: 5.5%;
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+img:hover{
+    transform: scale(1.1);
+}
+.image-div-0{
+    width:50%;
+}
+.image-div-1{
+    width:50%;
+    height:100%;
+    left:40%;
+    top:10%;
+    position:absolute;
+}
+.image-div-2{
+    width:50%;
+    position:absolute;
+    right:65%;
+    height: 100%
+}
+.image-div-3{
+    width:50%;
+    height:100%;
+    left:30%;
+    top:15%;
+    position:absolute;   
+}
+.image-div-4{
+    width:50%;
+    right:75%;
+    position:absolute;
+    height: 100%
+}
+.image-div-5{
+    width:50%;
+    height:100%;
+    left:25%;
+    top:10%;
+    position:absolute;
+                           
+}
+
+  @keyframes slideInFromBottom {
+    0% {
+      transform: translateY(100%); /* Start below the container */
+      opacity: 0;
+    }
+    30% {
+      transform: translateY(0); /* Slide to original position */
+      opacity: 1;
+    }
+    70% {
+      transform: translateY(0); /* Stay still for some time */
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100%); /* Slide up out of view */
+      opacity: 0;
+    }
+  }
+.mid-main{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:30%;
+    position:relative;
+    margin-top: 20%;
+  }
+.mid-main1{
+  width:30%;
+  transform: rotate(-20deg);
+  position:absolute;
+  left:10%
+}
+.mid-main2{
+  position:absolute;
+  width:30%;
+  left:30%;
+  height:100%;
+  z-index: 100;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+ margin-top:10px
+}
+.mid-main3{
+  position:absolute;
+  width:30%;
+  transform: rotate(15deg);
+  right:10%
+}
+.mid-main4{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#third-main1{
+right:40%;
+z-index: 80;
+  position: absolute;
+  height: 100%;
+  bottom: 15%;
+  width: 20%;
+}
+#third-main2{
+  z-index: 90;
+  left:41%;
+  height: 100%;
+  position: absolute;
+  width: 20%;
+  transform: rotate(-15deg)
+}
+#third-main3{
+  left:30%;
+  z-index: 100;
+  height: 100%;
+  position: absolute;
+  width: 50%;
+}
+#third-main4{
+  z-index: 94;
+  height: 100%;
+  position: absolute;
+  width: 20%;
+  transform: rotate(15deg)
+}
