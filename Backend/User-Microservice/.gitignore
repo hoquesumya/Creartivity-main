@@ -1,0 +1,30 @@
+# Ignore macOS system files
+.DS_Store
+
+# Ignore Maven build directory
+/target/
+
+# Ignore IntelliJ IDEA files
+.idea/
+
+# Ignore VS Code files
+.vscode/
+
+# Ignore Node.js dependencies
+node_modules/
+
+# Ignore Java compiled files
+*.class
+*.jar
+*.war
+
+# Ignore environment variables file
+.env
+
+# Ignore log files
+*.log
+
+# Ignore test coverage files
+*.coverage
+*.lcov
+*.cmd
