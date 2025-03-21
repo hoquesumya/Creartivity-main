@@ -34,7 +34,6 @@ function SignupDiv({funtionToggleSignup, functionToggleLogin}){
         }
     }
 
-
     return(
       <>
       <div className="main-signup">
