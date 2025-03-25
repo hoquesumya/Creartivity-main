@@ -1,10 +1,32 @@
-import {React, useRef} from "react";
+import {React, useRef, useEffect} from "react";
 import Form from 'react-bootstrap/Form';
 import "../../styles/frontPage/signup.css"
 import { Button } from "react-bootstrap";
 import ClearIcon from '@mui/icons-material/Clear';
 import { Link } from "react-router";
 
+const handleOuth2Signup=(event)=>{
+    console.log("initiate the google signup")
+    //define the Google Auth URL
+    var auth2url='https://accounts.google.com/o/oauth2/v2/auth';
+    //prepare the query parameters for inititating the auth2flow
+    var googleAuthquery ={
+        "client_id":import.meta.env.VITE_REACT_APP_GOOGLE_CLIENT_ID,
+        "redirect_uri":import.meta.env.VITE_REACT_APP_REDIRECT_URL,
+        "response_type": "code",
+        "scope": "profile email",
+        "state": "state_parameter_passthrough_value",
+        "include_granted_scopes": "true",
+        "prompt": "select_account",
+    }
+    //conver auth query to string
+    var queryString = new URLSearchParams(googleAuthquery).toString()
+    console.log(queryString)
+   window.location.href = `${auth2url}?${queryString}`
+   
+   
+    //add the dict of query pararms to google url redirect user to main page 
+}
 function SignupDiv({funtionToggleSignup, functionToggleLogin}){
     const emailRef = useRef(null)
     const passWordRef = useRef(null)
@@ -86,7 +108,12 @@ function SignupDiv({funtionToggleSignup, functionToggleLogin}){
          </Form>
          <p id = "or"> OR </p>
         
-         <Button variant="secondary" size="md"  style={{width:"60%", alignSelf:"center"}}>
+         <Button variant="secondary" 
+         size="md"  
+         style={{width:"60%", alignSelf:"center"}}
+         onClick={handleOuth2Signup}
+         
+         >
                 Google
         </Button>
          </div>
