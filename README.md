@@ -5,7 +5,7 @@ Creartivity is a web-based, scalable application designed to help artists secure
 
 # Domain Design
 Will be updated in future
-![domain](assets/domain.png)
+![domain](assests/domain.png)
 
 # Resource Modeling
 
