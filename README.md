@@ -4,8 +4,8 @@ There are many social media platforms where artists can promote their work, and 
 Creartivity is a web-based, scalable application designed to help artists securely share and sell their artwork, both through regular sales and bidding. The platform enables artists to connect with art buyers and find contract work for various events. By leveraging AI, Creartivity also recommends artworks that are likely to perform well in the market, giving artists insights to help them succeed (Future plan)
 
 # Domain Design
-<p> Will be updated in future
-<img src= "assests/domain.png" alt = "domain">
+Will be updated in future
+![domain](assets/domain.png)
 
 # Resource Modeling
 
