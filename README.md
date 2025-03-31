@@ -1,10 +1,11 @@
 # Project Description
-There are many social media platforms where artists can promote their work, and gaining popularity on these platforms can be an achievement. However, artists often face challenges with these apps, such as determining the best time to share their images or videos, or dealing with their content getting lost among a flood of other posts. Additionally, it can be difficult to get hired for contract jobs or sell art through traditional methods like bidding systems.
+There are many social media platforms where artists can promote their work, and gaining popularity on these platforms can be an achievement. However, artists often face challenges with these apps, such as determining the best time to share their images or videos, or dealing with their content getting lost among a flood of other posts. Additionally, it can be difficult to get hired for contract jobs or sell art through non-traditional methods like bidding systems.
 
-Creartivity is a web-based, scalable application designed to help artists securely share and sell their artwork, both through regular sales and bidding. The platform enables artists to connect with art buyers and find contract work for events. By leveraging AI, Creartivity also recommends artworks that are likely to perform well in the market, giving artists insights to help them succeed.
-
+Creartivity is a web-based, scalable application designed to help artists securely share and sell their artwork, both through regular sales and bidding. The platform enables artists to connect with art buyers and find contract work for various events. By leveraging AI, Creartivity also recommends artworks that are likely to perform well in the market, giving artists insights to help them succeed (Future plan)
 
 # Domain Design
+<p> Will be updated in future
+<img src= assests/domain.png alt = "domain">
 
 # Resource Modeling
 
