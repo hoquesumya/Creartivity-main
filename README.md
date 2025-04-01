@@ -1,3 +1,11 @@
+# Overview
+- [Project Description](#project-description)
+- [Domain Design](#domain-design)
+- [Resource Modeling](#resource-modeling)
+- [Interractive Design](#interractive-designs)
+- [Microservice](#microservices)
+- [Technologies](#technologies)
+- [Sprints](#sprints)
 # Project Description
 There are many social media platforms where artists can promote their work, and gaining popularity on these platforms can be an achievement. However, artists often face challenges with these apps, such as determining the best time to share their images or videos, or dealing with their content getting lost among a flood of other posts. Additionally, it can be difficult to get hired for contract jobs or sell art through non-traditional methods like bidding systems.
 
