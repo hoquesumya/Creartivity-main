@@ -27,6 +27,24 @@ This approach gives us the flexibility to experiment with different parts of the
 - <b>Backend</b>: Java Spring Boot
 - <b> Databse<b>: MySQL
 
+# Sprints
+## Sprint 1
+- Develop User microservice 
+- Desing login and signup page
+- Handle registration, login, Google authorization and JWT token-based authentication.
+- Setup Database
+- Write Unit test
+## Sprint 2
+- Impelement MetaData Service
+- Setup UI for metadata
+- Setup Database
+- Write Unit Test
+## Sprint 3
+- Implement Art Microservice
+- Implment UI for manaigng images or video reels
+- Setup Database 
+- Write Unit Test
+
 # Get Started
 ```bash
     cd Frontend
@@ -36,4 +54,5 @@ This approach gives us the flexibility to experiment with different parts of the
     cd Backend
     bash run_backend.sh
 ```
+
 
