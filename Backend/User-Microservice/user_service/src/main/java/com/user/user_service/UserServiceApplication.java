@@ -1,12 +1,12 @@
-package com.creartivity.basic;
+package com.user.user_service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BasicApplication {
+public class UserServiceApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(BasicApplication.class, args);
+		SpringApplication.run(UserServiceApplication.class, args);
 	}
 
 }

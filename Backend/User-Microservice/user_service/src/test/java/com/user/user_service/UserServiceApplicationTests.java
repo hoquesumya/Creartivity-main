@@ -1,9 +1,10 @@
-package com.creartivity.basic;
+package com.user.user_service;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BasicApplicationTests {
+class UserServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
